@@ -1,21 +1,54 @@
 <!DOCTYPE html>
 <html>
-<body>
-  <div class="card">
-    <img src="/assets/images/avatar.png" alt="Avatar" style="width:100%">
-    <div class="container">
-      <h4><b>Select User Type</b></h4> 
-      <p>Basic User / Premium User</p> 
-      <form (ngSubmit)="onSubmit()">
-      <select>
-        <option value="bas">Basic</option>
-        <option value="pre">Premium</option>
-      </select>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    </div>
-  </div>
+  <body>
+    <div *ngIf=" displayLogin == 1">
+      <div class="card">
+        <img src="/assets/images/avatar.png" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h4><b>Select User Type</b></h4> 
+          <p>Basic User / Premium User</p> 
+          <!-- <form (ngSubmit)="onSubmit()">
+            <select>
+              <option member="Basic User">Basic</option>
+              <option member="Premium User">Premium</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form> -->
+          
+    <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+      <select
+      required
+      name="dropdownValue"
+      label="Value 2"
+      placeholder="Select"
+      [(ngModel)]="dropdownValue">
+      <option [value]="1">Basic</option>
+      <option [value]="2">Premium</option>
+    </select>
+    
+    
+    <button type="Submit"  [disabled]="!form.valid">Submit</button>
+  </form>
+  <br/>
+  <!-- <div *ngIf="{{dropdownValue}} == 1; then Basic; else Premium"></div> -->
+  <!-- <ng-template #showBlock>
+    <p>
+      Show this only if "show" is true
+    </p>
+  </ng-template>
   
+  <ng-template #notShowBlock>
+    <p>
+      Show this only if "show" is not true
+    </p>
+  </ng-template> -->
+  
+</div>
+</div>
+</div>
+<div *ngIf= "displayPage == 3">
+<router-outlet></router-outlet></div>
+
 </body>
 </html>
 
