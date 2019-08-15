@@ -1,3 +1,5 @@
+<h1> Basic Member </h1>
+
 <div class="container">
     <br>
     <div class="row">
@@ -7,7 +9,6 @@
               <div class="input-group">
                   <input [(ngModel)]="firstFieldName" class="form-control py-2 " type="text" name="Enter IP" placeholder="Enter Ip ">
                 <div class="input-group-prepend">
-                  <div (click)="firstField = false" class="input-group-text"><i class="mdi mdi-minus mdi-18px"></i></div>
                   <div *ngIf="fieldArray.length <= 3" class="input-group-text" (click)="addFieldValue()"><i class="mdi mdi-plus mdi-18px"></i></div>
                 </div>
               </div>
@@ -32,3 +33,5 @@
       </table>
     </div>
   </div>
+
+  <a [routerLink]="[ '/', 'first' ]" routerLinkActive="active">Go Back to First Page</a>

@@ -24,7 +24,7 @@ export class BasicPageComponent  {
       this.fieldArray.push(this.newAttribute);
       this.newAttribute = {};
     } else {
-      
+      this.newAttribute = null;
     }
   }
 

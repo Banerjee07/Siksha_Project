@@ -25,7 +25,7 @@ export class PremiumPageComponent  {
       this.fieldArray.push(this.newAttribute);
       this.newAttribute = {};
     } else {
-      
+      this.newAttribute = null;
     }
   }
 
