@@ -1,13 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  ReactiveFormsModule,
-  FormsModule,
-  FormGroup,
-  FormControl,
-  Validators,
-  FormBuilder
-} from '@angular/forms';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -26,11 +17,11 @@ export class PremiumPageComponent  {
   newAttribute: any = {};
 
   firstField = true;
-  firstFieldName = 'First Item name';
+  firstFieldName = 'Enter Ip';
   isEditItems: boolean;
 
   addFieldValue(index) {
-    if (this.fieldArray.length <= 2) {
+    if (this.fieldArray.length <= 8) {
       this.fieldArray.push(this.newAttribute);
       this.newAttribute = {};
     } else {

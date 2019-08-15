@@ -39,7 +39,9 @@ export class FirstPageComponent implements OnInit {
     this.router.navigate(['/premium']);
     this.displayPage = 3}
     this.displayLogin = 0;
-    console.log(this.user);
+    
+    // console.log(this.user);
+
     // if (this.myform.valid) {
     //   console.log("Form Submitted!");
     // }
