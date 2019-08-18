@@ -25,6 +25,10 @@
               </div>
             </td>
           </tr>
+
+          <br/>
+          <div *ngIf="fieldArray.length == 4" style="color: red">You have to be a premium member to add more.</div>
+
           <tr>
             <td align="right">
               <button (click)="onEditCloseItems()" class="btn btn-primary btn-sm" type="button">Save</button>

@@ -26,6 +26,10 @@
               </div>
             </td>
           </tr>
+          
+          <br/>
+          <div *ngIf="fieldArray.length == 9" style="color: red">10 is the maximum you can add.</div>
+
           <tr>
             <td align="right">
               <button (click)="onEditCloseItems()"  class="btn btn-primary btn-sm" type="button">Save</button>
