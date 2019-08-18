@@ -13,11 +13,11 @@ export class PremiumPageComponent  {
   // ngOnInit() {
   // }
 
-  fieldArray: Array<any> = [];
+  public fieldArray: Array<any> = [];
+  public firstFieldName: any;
   newAttribute: any = {};
 
   firstField = true;
-  firstFieldName = 'Enter Ip';
   isEditItems: boolean;
 
   addFieldValue(index) {
@@ -35,5 +35,8 @@ export class PremiumPageComponent  {
 
   onEditCloseItems() {
     this.isEditItems = !this.isEditItems;
+    localStorage.setItem('Initial IP', JSON.stringify(this.firstFieldName));
+    localStorage.setItem('IP', JSON.stringify( this.fieldArray));
+    console.log(localStorage);
   }
 }

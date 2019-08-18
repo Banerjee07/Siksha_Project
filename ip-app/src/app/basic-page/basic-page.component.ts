@@ -14,10 +14,10 @@ export class BasicPageComponent  {
   // }
 
   fieldArray: Array<any> = [];
+  public firstFieldName: any;
   newAttribute: any = {};
   isEditItems: boolean;
   firstField = true;
-  firstFieldName = 'Enter Ip';
 
   addFieldValue(index) {
     if (this.fieldArray.length <= 3) {
@@ -34,6 +34,9 @@ export class BasicPageComponent  {
 
   onEditCloseItems() {
     this.isEditItems = !this.isEditItems;
+    localStorage.setItem('Initial IP', JSON.stringify(this.firstFieldName));
+    localStorage.setItem('IP', JSON.stringify( this.fieldArray));
+    console.log(localStorage);
   }
 
 }

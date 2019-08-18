@@ -3,6 +3,7 @@
 <div class="container">
     <br>
     <div class="row">
+        <!-- <form #f="ngForm" [ngFormOptions]="{updateOn: 'blur'}" novalidate> -->
       <table class="table table-striped table-bordered col-lg-4">
           <tr>
             <td *ngIf="firstField">
@@ -30,8 +31,8 @@
               <button (click)="onEditCloseItems()"  class="btn btn-primary btn-sm" type="button">Save</button>
             </td>
           </tr>
-        <!-- </tbody> -->
       </table>
+      <!-- </form> -->
     </div>
   </div>
 
