@@ -13,30 +13,40 @@ export class PremiumPageComponent  {
   // ngOnInit() {
   // }
 
-  public fieldArray: Array<any> = [];
+  fieldArray: Array<any> = [];
   public firstFieldName: any;
   newAttribute: any = {};
-
-  firstField = true;
   isEditItems: boolean;
-
-  addFieldValue(index) {
+  firstField = true;
+  
+  addFieldValue() {
     if (this.fieldArray.length <= 8) {
       this.fieldArray.push(this.newAttribute);
       this.newAttribute = {};
     } else {
       this.newAttribute = null;
-    }
+    }  
   }
-
   deleteFieldValue(index) {
     this.fieldArray.splice(index, 1);
   }
-
-  onEditCloseItems() {
+  
+  onCloseItems() {
     this.isEditItems = !this.isEditItems;
     localStorage.setItem('Initial IP', JSON.stringify(this.firstFieldName));
     localStorage.setItem('IP', JSON.stringify( this.fieldArray));
     console.log(localStorage);
+    
+   
+      if (/^([0-9]{1,3})[.]([0-9]{1,3})[.]([0-9]{1,3})[.]([0-9]{1,3})$/.test(this.firstFieldName)) {  
+        return (true)  
+      }  
+      if (/^([0-9]{1,3})[.]([0-9]{1,3})[.]([0-9]{1,3})[.]([0-9]{1,3})$/.test(this.fieldArray)) {  
+        return (true)  
+      }
+      alert("You have entered an invalid IP address!")  
+      return (false)  
+
   }
+
 }
